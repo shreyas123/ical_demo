@@ -1,0 +1,29 @@
+<p>
+  <b>Start date:</b>
+  <%=h @event.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @event.end_date %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @event.description %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @event.location %>
+</p>
+
+<p>
+  <b>Attendees:</b>
+  <%=h @event.attendees %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+<%= link_to 'Subscribe', subscribe_event_path(@event),:popup => ['new_window_name', 'height=300,width=600'] %>

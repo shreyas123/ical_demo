@@ -1,0 +1,28 @@
+<h1>Listing event1s</h1>
+
+<table>
+  <tr>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Description</th>
+    <th>Location</th>
+    <th>Attendees</th>
+  </tr>
+
+<% @event1s.each do |event1| %>
+  <tr>
+    <td><%=h event1.start_date %></td>
+    <td><%=h event1.end_date %></td>
+    <td><%=h event1.description %></td>
+    <td><%=h event1.location %></td>
+    <td><%=h event1.attendees %></td>
+    <td><%= link_to 'Show', event1 %></td>
+    <td><%= link_to 'Edit', edit_event1_path(event1) %></td>
+    <td><%= link_to 'Destroy', event1, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New event1', new_event1_path %>

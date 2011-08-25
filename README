@@ -1,0 +1,20 @@
+== Dependencies or Prerequisites:
+
+To use AclIntegrator plugin, there are some prerequisites:
+
+1. Required Gem:
+-------------------
+	ri_cal
+== Instructions
+	To integrate with Outlook call url using webcal instead of http
+ex. webcal://localhost:3000/example.ics"
+	For reference on how to create ics file please check lib/create_ical.rb file.
+	For various parameters which can be used to create ics file please check 
+<Ruby Installation Dir>\lib\ruby\gems\1.8\gems\ri_cal-0.8.8\component_attributes\
+
+== Developers
+Shreyas Agarwal
+
+== Compatibility
+Rails 2.3.x 3.x.x
+Ruby 1.8.7 1.9.x

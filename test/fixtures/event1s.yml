@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start_date: 2011-03-15 15:33:24
+  end_time: 2011-03-15 15:33:24
+  description: MyString
+  location: MyString
+  attendees: MyString
+
+two:
+  start_date: 2011-03-15 15:33:24
+  end_time: 2011-03-15 15:33:24
+  description: MyString
+  location: MyString
+  attendees: MyString

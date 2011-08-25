@@ -1,0 +1,1981 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (203.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (281.2ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEvents (20110315091204)
+  [4;36;1mSQL (93.7ms)[0m   [0;1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `start_date` datetime, `end_date` datetime, `description` varchar(255), `location` varchar(255), `attendees` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110315091204')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (62.5ms)[0m   [0;1mdescribe `events`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `events`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (140.6ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEvents (20110315095554)
+  [4;36;1mSQL (78.1ms)[0m   [0;1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `start_date` datetime, `end_date` datetime, `description` varchar(255), `location` varchar(255), `attendees` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110315095554')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mdescribe `events`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `events`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-03-15 15:31:16) [GET]
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 578ms (View: 562, DB: 0) | 200 OK [http://localhost/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-03-15 15:31:19) [GET]
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/events/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 15:31:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"/n77rR4lUiP8E6LUd1InElS5mnBNpqh3tK4ljIp5N4o="}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mEvent Create (0.0ms)[0m   [0;1mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES(NULL, NULL, '2011-03-15 10:01:21', NULL, '2011-03-15 10:01:21', NULL, NULL)[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/events/1
+Completed in 78ms (DB: 47) | 302 Found [http://localhost/events]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 15:31:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (31.2ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 78ms (View: 16, DB: 47) | 200 OK [http://localhost/events/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-03-15 15:31:22) [GET]
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/events]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Event1sController#index (for 127.0.0.1 at 2011-03-15 15:33:59) [GET]
+  [4;36;1mEvent1 Load (0.0ms)[0m   [0;1mMysql::Error: Table 'icall_demo_development.event1s' doesn't exist: SELECT * FROM `event1s` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'icall_demo_development.event1s' doesn't exist: SELECT * FROM `event1s` ):
+  app/controllers/event1s_controller.rb:5:in `index'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (93.7ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEvents (20110315095554)
+Migrating to CreateEvent1s (20110315100324)
+  [4;36;1mSQL (93.7ms)[0m   [0;1mCREATE TABLE `event1s` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `start_date` datetime, `end_time` datetime, `description` varchar(255), `location` varchar(255), `attendees` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110315100324')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `event1s`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mdescribe `event1s`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `event1s`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mdescribe `events`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `events`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Event1sController#index (for 127.0.0.1 at 2011-03-15 15:34:22) [GET]
+  [4;35;1mEvent1 Load (0.0ms)[0m   [0mSELECT * FROM `event1s` [0m
+Rendering template within layouts/event1s
+Rendering event1s/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/event1s]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Event1sController#new (for 127.0.0.1 at 2011-03-15 15:34:23) [GET]
+  [4;36;1mEvent1 Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `event1s`[0m
+Rendering template within layouts/event1s
+Rendering event1s/new
+Completed in 250ms (View: 109, DB: 0) | 200 OK [http://localhost/event1s/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 15:36:48) [GET]
+
+ActionController::RoutingError (No route matches "/event" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-03-15 15:36:51) [GET]
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/events]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-03-15 15:36:52) [GET]
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `end_time' for #<Event:0xb9e3530>) on line #12 of app/views/events/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :end_time %><br />
+12:     <%= f.datetime_select :end_time %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :description %><br />
+
+    app/views/events/new.html.erb:12
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:29:in `new'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-03-15 15:38:21) [GET]
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 78ms (View: 62, DB: 0) | 200 OK [http://localhost/events/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 15:38:27) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"/n77rR4lUiP8E6LUd1InElS5mnBNpqh3tK4ljIp5N4o=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasdasd", "end_date(4i)"=>"10", "start_date(2i)"=>"3", "end_date(5i)"=>"08", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd", "start_date(4i)"=>"10", "start_date(5i)"=>"08", "description"=>"qwasdasd", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mEvent Create (0.0ms)[0m   [0;1mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 10:08:00', 'asdasdasd', '2011-03-15 10:08:27', 'asdasdasdasdasd', '2011-03-15 10:08:27', 'qwasdasd', '2011-03-15 10:08:00')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/events/2
+Completed in 47ms (DB: 0) | 302 Found [http://localhost/events]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 15:38:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 62ms (View: 16, DB: 31) | 200 OK [http://localhost/events/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-03-15 15:38:29) [GET]
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/events]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 15:45:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/b.ics" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-03-15 19:00:40) [GET]
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Completed in 813ms (View: 781, DB: 16) | 200 OK [http://localhost/events]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-03-15 19:00:43) [GET]
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 219ms (View: 203, DB: 0) | 200 OK [http://localhost/events/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 19:00:49) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasdasdasd", "end_date(4i)"=>"13", "start_date(2i)"=>"3", "end_date(5i)"=>"30", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd", "start_date(4i)"=>"13", "start_date(5i)"=>"30", "description"=>"asdasd", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Create (31.3ms)[0m   [0mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 13:30:00', 'asdasdasdasd', '2011-03-15 13:30:49', 'asdasdasdasdasd', '2011-03-15 13:30:49', 'asdasd', '2011-03-15 13:30:00')[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+
+TypeError ($_ value need to be String (nil given)):
+  C:/Ruby187/lib/ruby/1.8/date/format.rb:1061:in `_parse'
+  C:/Ruby187/lib/ruby/1.8/time.rb:240:in `parse'
+  lib/create_icall.rb:8:in `create_icall_file'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:26:in `method_missing'
+  lib/create_icall.rb:5:in `create_icall_file'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:50:in `call'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:50:in `initialize'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component/calendar.rb:12:in `initialize'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal.rb:111:in `new'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal.rb:111:in `Calendar'
+  lib/create_icall.rb:4:in `create_icall_file'
+  app/controllers/events_controller.rb:51:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 19:01:11) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasdasdasd", "end_date(4i)"=>"13", "start_date(2i)"=>"3", "end_date(5i)"=>"30", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd", "start_date(4i)"=>"13", "start_date(5i)"=>"30", "description"=>"asdasd", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Create (0.0ms)[0m   [0mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 13:30:00', 'asdasdasdasd', '2011-03-15 13:31:11', 'asdasdasdasdasd', '2011-03-15 13:31:11', 'asdasd', '2011-03-15 13:30:00')[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+
+TypeError ($_ value need to be String (nil given)):
+  C:/Ruby187/lib/ruby/1.8/date/format.rb:1061:in `_parse'
+  C:/Ruby187/lib/ruby/1.8/time.rb:240:in `parse'
+  lib/create_icall.rb:8:in `create_icall_file'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:26:in `method_missing'
+  lib/create_icall.rb:5:in `create_icall_file'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:50:in `call'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:50:in `initialize'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component/calendar.rb:12:in `initialize'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal.rb:111:in `new'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal.rb:111:in `Calendar'
+  lib/create_icall.rb:4:in `create_icall_file'
+  app/controllers/events_controller.rb:51:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (281.3ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 19:01:20) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasdasdasd", "end_date(4i)"=>"13", "start_date(2i)"=>"3", "end_date(5i)"=>"30", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd", "start_date(4i)"=>"13", "start_date(5i)"=>"30", "description"=>"asdasd", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Create (0.0ms)[0m   [0mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 13:30:00', 'asdasdasdasd', '2011-03-15 13:31:20', 'asdasdasdasdasd', '2011-03-15 13:31:20', 'asdasd', '2011-03-15 13:30:00')[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+
+TypeError ($_ value need to be String (nil given)):
+  C:/Ruby187/lib/ruby/1.8/date/format.rb:1061:in `_parse'
+  C:/Ruby187/lib/ruby/1.8/time.rb:240:in `parse'
+  lib/create_icall.rb:8:in `create_icall_file'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:26:in `method_missing'
+  lib/create_icall.rb:5:in `create_icall_file'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:50:in `call'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:50:in `initialize'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component/calendar.rb:12:in `initialize'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal.rb:111:in `new'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal.rb:111:in `Calendar'
+  lib/create_icall.rb:4:in `create_icall_file'
+  app/controllers/events_controller.rb:51:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 19:01:41) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasdasdasd", "end_date(4i)"=>"13", "start_date(2i)"=>"3", "end_date(5i)"=>"30", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd", "start_date(4i)"=>"13", "start_date(5i)"=>"30", "description"=>"asdasd", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Create (0.0ms)[0m   [0mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 13:30:00', 'asdasdasdasd', '2011-03-15 13:31:41', 'asdasdasdasdasd', '2011-03-15 13:31:41', 'asdasd', '2011-03-15 13:30:00')[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+
+Errno::EINVAL (Invalid argument - E:/icall_demo/public/icall/62011-03-15 13:31:41 UTC2011-03-15 13:31:41 UTC.ics):
+  lib/create_icall.rb:15:in `initialize'
+  lib/create_icall.rb:15:in `new'
+  lib/create_icall.rb:15:in `create_icall_file'
+  app/controllers/events_controller.rb:51:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 19:23:11) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasdasdasd", "end_date(4i)"=>"13", "start_date(2i)"=>"3", "end_date(5i)"=>"30", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd", "start_date(4i)"=>"13", "start_date(5i)"=>"30", "description"=>"asdasd", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Create (0.0ms)[0m   [0mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 13:30:00', 'asdasdasdasd', '2011-03-15 13:53:11', 'asdasdasdasdasd', '2011-03-15 13:53:11', 'asdasd', '2011-03-15 13:30:00')[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+
+Errno::EINVAL (Invalid argument - E:/icall_demo/public/icall/72011-03-15 13:53:11 UTC2011-03-15 13:53:11 UTC.ics):
+  lib/create_icall.rb:15:in `initialize'
+  lib/create_icall.rb:15:in `new'
+  lib/create_icall.rb:15:in `create_icall_file'
+  app/controllers/events_controller.rb:51:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 19:27:19) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasdasdasd", "end_date(4i)"=>"13", "start_date(2i)"=>"3", "end_date(5i)"=>"30", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd", "start_date(4i)"=>"13", "start_date(5i)"=>"30", "description"=>"asdasd", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Create (0.0ms)[0m   [0mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 13:30:00', 'asdasdasdasd', '2011-03-15 13:57:19', 'asdasdasdasdasd', '2011-03-15 13:57:19', 'asdasd', '2011-03-15 13:30:00')[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/events/8
+Completed in 3063ms (DB: 31) | 302 Found [http://localhost/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 19:27:22) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 8) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 63ms (View: 31, DB: 16) | 200 OK [http://localhost/events/8]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 19:28:10) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasdasdasd", "end_date(4i)"=>"13", "start_date(2i)"=>"3", "end_date(5i)"=>"30", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd", "start_date(4i)"=>"13", "start_date(5i)"=>"30", "description"=>"asdasd", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Create (0.0ms)[0m   [0mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 13:30:00', 'asdasdasdasd', '2011-03-15 13:58:10', 'asdasdasdasdasd', '2011-03-15 13:58:10', 'asdasd', '2011-03-15 13:30:00')[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/events/9
+Completed in 2891ms (DB: 31) | 302 Found [http://localhost/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 19:28:13) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 63ms (View: 16, DB: 16) | 200 OK [http://localhost/events/9]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 19:29:37) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `subscribe_events_path' for #<ActionView::Base:0xb4dda48>) on line #29 of app/views/events/show.html.erb:
+26: 
+27: <%= link_to 'Edit', edit_event_path(@event) %> |
+28: <%= link_to 'Back', events_path %>
+29: <%= link_to 'Subscribe', subscribe_events_path(@event) %>
+
+    app/views/events/show.html.erb:29
+    app/controllers/events_controller.rb:24:in `show'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /script\server:3
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+    C:/Ruby187/bin/rdebug-ide:19:in `load'
+    C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (265.6ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 19:30:19) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `subscribe_events_path' for #<ActionView::Base:0xb513b98>) on line #29 of app/views/events/show.html.erb:
+26: 
+27: <%= link_to 'Edit', edit_event_path(@event) %> |
+28: <%= link_to 'Back', events_path %>
+29: <%= link_to 'Subscribe', subscribe_events_path(@event) %>
+
+    app/views/events/show.html.erb:29
+    app/controllers/events_controller.rb:24:in `show'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /script\server:3
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+    C:/Ruby187/bin/rdebug-ide:19:in `load'
+    C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 19:30:29) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `subscribe_events_path' for #<ActionView::Base:0xb73f558>) on line #29 of app/views/events/show.html.erb:
+26: 
+27: <%= link_to 'Edit', edit_event_path(@event) %> |
+28: <%= link_to 'Back', events_path %>
+29: <%= link_to 'Subscribe', subscribe_events_path(@event) %>
+
+    app/views/events/show.html.erb:29
+    app/controllers/events_controller.rb:24:in `show'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /script\server:3
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+    C:/Ruby187/bin/rdebug-ide:19:in `load'
+    C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (281.3ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 19:31:01) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `subscribe_events_path' for #<ActionView::Base:0xb860980>) on line #29 of app/views/events/show.html.erb:
+26: 
+27: <%= link_to 'Edit', edit_event_path(@event) %> |
+28: <%= link_to 'Back', events_path %>
+29: <%= link_to 'Subscribe', subscribe_events_path(@event) %>
+
+    app/views/events/show.html.erb:29
+    app/controllers/events_controller.rb:24:in `show'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /script\server:3
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+    C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+    C:/Ruby187/bin/rdebug-ide:19:in `load'
+    C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (156.3ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 19:32:33) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (31.2ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 563ms (View: 422, DB: 31) | 200 OK [http://localhost/events/9]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:38:19) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mEvent Columns (31.2ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+
+ActionView::MissingTemplate (Missing template events/subscribe.erb in view path app/views):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:38:33) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+
+ActionView::MissingTemplate (Missing template events/subscribe.erb in view path app/views):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:28) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 1234ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:29) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 9281ms (DB: 0) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:38) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 2266ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:41) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 672ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (15.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:42) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 594ms (DB: 47) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:43) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 406ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:43) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 453ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:44) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 8422ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:53) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:53) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 62ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:53) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:53) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 31ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:54) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:54) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 94ms (DB: 0) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:54) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 234ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:55) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 0) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:55) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:55) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:55) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:55) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:40:56) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 19:41:42) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (31.3ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 94ms (View: 31, DB: 47) | 200 OK [http://localhost/events/9]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:45) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 141ms (DB: 0) | 302 Found [http://localhost/events/9/subscribe]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:45) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 109ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:46) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:46) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:46) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:46) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:46) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (31.3ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:47) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:47) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:47) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:47) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (31.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 62ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:48) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:48) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 203ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:48) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:48) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:41:49) [GET]
+  Parameters: {"url"=>"webcal://localhost:3000/public/icall/9201103155810.ics", "id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to http://localhost:3000/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/9/subscribe?url=webcal%3A%2F%2Flocalhost%3A3000%2Fpublic%2Ficall%2F9201103155810.ics]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 19:43:15) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 63ms (View: 16, DB: 31) | 200 OK [http://localhost/events/9]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:43:17) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (31.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Redirected to webcal://localhost:3000/public/icall/9201103155810.ics
+Completed in 3391ms (DB: 47) | 302 Found [http://localhost/events/9/subscribe]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-03-15 19:45:43) [GET]
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Completed in 94ms (View: 47, DB: 31) | 200 OK [http://localhost/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-03-15 19:45:47) [GET]
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Completed in 62ms (View: 31, DB: 16) | 200 OK [http://localhost/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-03-15 19:45:49) [GET]
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 547ms (View: 438, DB: 16) | 200 OK [http://localhost/events/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-03-15 19:45:49) [GET]
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 94ms (View: 63, DB: 0) | 200 OK [http://localhost/events/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 19:46:07) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasdasdasasd", "end_date(4i)"=>"15", "start_date(2i)"=>"3", "end_date(5i)"=>"15", "start_date(3i)"=>"16", "attendees"=>"asdasdasd@asdas.com", "start_date(4i)"=>"14", "start_date(5i)"=>"15", "description"=>"asdasdasd", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Create (0.0ms)[0m   [0mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-16 14:15:00', 'asdasdasdasasd', '2011-03-15 14:16:07', 'asdasdasd@asdas.com', '2011-03-15 14:16:07', 'asdasdasd', '2011-03-15 15:15:00')[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/events/10
+Completed in 484ms (DB: 47) | 302 Found [http://localhost/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 19:46:08) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 47ms (View: 0, DB: 31) | 200 OK [http://localhost/events/10]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:46:09) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+Redirected to webcal://localhost:3000/public/icall/10201103151607.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/10/subscribe]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 19:46:48) [GET]
+
+ActionController::RoutingError (No route matches "/public/icall/10201103151607.ics" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 19:47:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/b.ics" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:47:01) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+Redirected to webcal://localhost:3000/public/icall/10201103151607.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/10/subscribe]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 19:47:04) [GET]
+
+ActionController::RoutingError (No route matches "/public/icall/10201103151607.ics" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:47:09) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+Redirected to webcal://localhost:3000/public/icall/10201103151607.ics
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/events/10/subscribe]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 19:47:31) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+Redirected to webcal://localhost:3000/public/icall/10201103151607.ics
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/events/10/subscribe]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 19:47:35) [GET]
+
+ActionController::RoutingError (No route matches "/public/icall/10201103151607.ics" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 20:22:01) [GET]
+
+ActionController::RoutingError (No route matches "/public/icall/10201103151607.ics" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 20:22:13) [GET]
+
+ActionController::RoutingError (No route matches "/public/icall/b.ics" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 20:22:43) [GET]
+
+ActionController::RoutingError (No route matches "/public/javascripts/b.ics" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2011-03-15 20:23:44) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mEvent Columns (46.9ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 359ms (View: 281, DB: 63) | 200 OK [http://localhost/events/10/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#update (for 127.0.0.1 at 2011-03-15 20:23:48) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "id"=>"10", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasdasdasasd", "end_date(4i)"=>"15", "start_date(2i)"=>"3", "end_date(5i)"=>"15", "start_date(3i)"=>"16", "attendees"=>"asdasdasd@asdas.com", "start_date(4i)"=>"14", "start_date(5i)"=>"15", "description"=>"asdasdasdasdasdasdasdas", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mEvent Update (0.0ms)[0m   [0;1mUPDATE `events` SET `updated_at` = '2011-03-15 14:53:48', `description` = 'asdasdasdasdasdasdasdas' WHERE `id` = 10[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/events/10
+Completed in 78ms (DB: 16) | 302 Found [http://localhost/events/10]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 20:23:48) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 62ms (View: 16, DB: 31) | 200 OK [http://localhost/events/10]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2011-03-15 20:24:06) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 109ms (View: 63, DB: 31) | 200 OK [http://localhost/events/10/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#update (for 127.0.0.1 at 2011-03-15 20:24:14) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "id"=>"10", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"Pune", "end_date(4i)"=>"15", "start_date(2i)"=>"3", "end_date(5i)"=>"15", "start_date(3i)"=>"16", "attendees"=>"asdasdasd@asdas.com", "start_date(4i)"=>"14", "start_date(5i)"=>"15", "description"=>"Umesh", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Update (0.0ms)[0m   [0mUPDATE `events` SET `updated_at` = '2011-03-15 14:54:14', `location` = 'Pune', `description` = 'Umesh' WHERE `id` = 10[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/events/10
+Completed in 63ms (DB: 16) | 302 Found [http://localhost/events/10]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 20:24:14) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 62ms (View: 16, DB: 31) | 200 OK [http://localhost/events/10]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-03-15 21:46:51) [GET]
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Completed in 78ms (View: 31, DB: 31) | 200 OK [http://localhost/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-03-15 21:46:52) [GET]
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 109ms (View: 78, DB: 16) | 200 OK [http://localhost/events/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 21:47:06) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"asdasd", "end_date(4i)"=>"16", "start_date(2i)"=>"3", "end_date(5i)"=>"16", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd@asdasd.com", "start_date(4i)"=>"16", "start_date(5i)"=>"16", "description"=>"Pratik", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mEvent Create (0.0ms)[0m   [0;1mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 16:16:00', 'asdasd', '2011-03-15 16:17:06', 'asdasdasdasdasd@asdasd.com', '2011-03-15 16:17:06', 'Pratik', '2011-03-15 16:16:00')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+
+NoMethodError (undefined method `to_ri_cal_duration_value' for 4:Fixnum):
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/property_value/duration.rb:37:in `convert'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/properties/event.rb:625:in `duration='
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:36:in `send'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:36:in `method_missing'
+  lib/create_icall.rb:9:in `create_icall_file'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:26:in `method_missing'
+  lib/create_icall.rb:5:in `create_icall_file'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:50:in `call'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:50:in `initialize'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component/calendar.rb:12:in `initialize'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal.rb:111:in `new'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal.rb:111:in `Calendar'
+  lib/create_icall.rb:4:in `create_icall_file'
+  app/controllers/events_controller.rb:57:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 21:51:47) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"Pune", "end_date(4i)"=>"23", "start_date(2i)"=>"3", "end_date(5i)"=>"00", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd@asdasd.com", "start_date(4i)"=>"22", "start_date(5i)"=>"00", "description"=>"Pratik", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mEvent Create (15.6ms)[0m   [0;1mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 22:00:00', 'Pune', '2011-03-15 16:21:47', 'asdasdasdasdasd@asdasd.com', '2011-03-15 16:21:47', 'Pratik', '2011-03-15 23:00:00')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+
+NoMethodError (undefined method `to_ri_cal_duration_value' for Tue Mar 15 23:00:00 UTC 2011:Time):
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/property_value/duration.rb:37:in `convert'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/properties/event.rb:625:in `duration='
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:36:in `send'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:36:in `method_missing'
+  lib/create_icall.rb:9:in `create_icall_file'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:26:in `method_missing'
+  lib/create_icall.rb:5:in `create_icall_file'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:50:in `call'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component.rb:50:in `initialize'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal/component/calendar.rb:12:in `initialize'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal.rb:111:in `new'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ri_cal-0.8.8/lib/ri_cal.rb:111:in `Calendar'
+  lib/create_icall.rb:4:in `create_icall_file'
+  app/controllers/events_controller.rb:57:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (234.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 21:51:58) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"Pune", "end_date(4i)"=>"23", "start_date(2i)"=>"3", "end_date(5i)"=>"00", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd@asdasd.com", "start_date(4i)"=>"22", "start_date(5i)"=>"00", "description"=>"Pratik", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mEvent Create (0.0ms)[0m   [0;1mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 22:00:00', 'Pune', '2011-03-15 16:21:58', 'asdasdasdasdasd@asdasd.com', '2011-03-15 16:21:58', 'Pratik', '2011-03-15 23:00:00')[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/events/13
+Completed in 94ms (DB: 47) | 302 Found [http://localhost/events]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 21:51:58) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 13) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/events/13]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 21:52:01) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 13) [0m
+Redirected to webcal://localhost:3000/public/icall/13201103152158.ics
+Completed in 47ms (DB: 31) | 302 Found [http://localhost/events/13/subscribe]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 21:52:04) [GET]
+
+ActionController::RoutingError (No route matches "/public/icall/13201103152158.ics" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /script\server:3
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `debug_load'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/lib/ruby-debug.rb:90:in `main'
+  C:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.1.10/bin/rdebug-ide:74
+  C:/Ruby187/bin/rdebug-ide:19:in `load'
+  C:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 21:52:21) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 13) [0m
+Redirected to webcal://localhost:3000/icall/13201103152158.ics
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/events/13/subscribe]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2011-03-15 21:54:00) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 13) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 109ms (View: 62, DB: 31) | 200 OK [http://localhost/events/13/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#update (for 127.0.0.1 at 2011-03-15 21:54:06) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "id"=>"13", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"Pune", "end_date(4i)"=>"23", "start_date(2i)"=>"3", "end_date(5i)"=>"00", "start_date(3i)"=>"15", "attendees"=>"asdasdasdasdasd@asdasd.com", "start_date(4i)"=>"22", "start_date(5i)"=>"00", "description"=>"Shreyas", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;36;1mEvent Columns (31.2ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 13) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Update (0.0ms)[0m   [0mUPDATE `events` SET `updated_at` = '2011-03-15 16:24:06', `description` = 'Shreyas' WHERE `id` = 13[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/events/13
+Completed in 94ms (DB: 47) | 302 Found [http://localhost/events/13]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 21:54:06) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 13) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 62ms (View: 16, DB: 31) | 200 OK [http://localhost/events/13]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-03-15 21:54:52) [GET]
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Completed in 78ms (View: 47, DB: 16) | 200 OK [http://localhost/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-03-15 21:55:03) [GET]
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 94ms (View: 62, DB: 16) | 200 OK [http://localhost/events/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 127.0.0.1 at 2011-03-15 21:55:24) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"Shreyas", "end_date(4i)"=>"17", "start_date(2i)"=>"3", "end_date(5i)"=>"25", "start_date(3i)"=>"15", "attendees"=>"asdasd@asdasd.com", "start_date(4i)"=>"16", "start_date(5i)"=>"25", "description"=>"Pratik", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mEvent Create (0.0ms)[0m   [0;1mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-15 16:25:00', 'Shreyas', '2011-03-15 16:25:24', 'asdasd@asdasd.com', '2011-03-15 16:25:24', 'Pratik', '2011-03-15 17:25:00')[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/events/14
+Completed in 109ms (DB: 47) | 302 Found [http://localhost/events]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 21:55:25) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 14) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 62ms (View: 16, DB: 16) | 200 OK [http://localhost/events/14]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 127.0.0.1 at 2011-03-15 21:55:29) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 14) [0m
+Redirected to webcal://localhost:3000/icall/14201103152524.ics
+Completed in 31ms (DB: 16) | 302 Found [http://localhost/events/14/subscribe]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2011-03-15 21:55:40) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 14) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 203ms (View: 172, DB: 16) | 200 OK [http://localhost/events/14/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#update (for 127.0.0.1 at 2011-03-15 21:56:12) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"T0S70xzbfSC+mczV/sNoOEj5+Xse/e84cfK3UVMgO+U=", "id"=>"14", "event"=>{"end_date(3i)"=>"15", "start_date(1i)"=>"2011", "location"=>"Shreyas1234", "end_date(4i)"=>"18", "start_date(2i)"=>"3", "end_date(5i)"=>"25", "start_date(3i)"=>"15", "attendees"=>"asdasd@asdasd.com", "start_date(4i)"=>"16", "start_date(5i)"=>"25", "description"=>"Pratik1234", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 14) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Update (0.0ms)[0m   [0mUPDATE `events` SET `updated_at` = '2011-03-15 16:26:12', `location` = 'Shreyas1234', `end_date` = '2011-03-15 18:25:00', `description` = 'Pratik1234' WHERE `id` = 14[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/events/14
+Completed in 94ms (DB: 31) | 302 Found [http://localhost/events/14]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 127.0.0.1 at 2011-03-15 21:56:12) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 14) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/events/14]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 10.77.224.66 at 2011-03-16 12:15:18) [GET]
+  [4;35;1mEvent Load (62.5ms)[0m   [0mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Completed in 797ms (View: 703, DB: 78) | 200 OK [http://ps5050/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#new (for 10.77.224.66 at 2011-03-16 12:15:24) [GET]
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 156ms (View: 141, DB: 0) | 200 OK [http://ps5050/events/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#create (for 10.77.224.66 at 2011-03-16 12:15:51) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"3Om/Z22689vemSYYLVk3f6x4Lkn89mhBjB/uUQfcqMI=", "event"=>{"end_date(3i)"=>"17", "start_date(1i)"=>"2011", "location"=>"Pune", "end_date(4i)"=>"06", "start_date(2i)"=>"3", "end_date(5i)"=>"45", "start_date(3i)"=>"16", "attendees"=>"chirag_viradiya@persistent.co.in", "start_date(4i)"=>"06", "start_date(5i)"=>"45", "description"=>"Test Event ", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mEvent Create (0.0ms)[0m   [0;1mINSERT INTO `events` (`start_date`, `location`, `created_at`, `attendees`, `updated_at`, `description`, `end_date`) VALUES('2011-03-16 06:45:00', 'Pune', '2011-03-16 06:45:51', 'chirag_viradiya@persistent.co.in', '2011-03-16 06:45:51', 'Test Event ', '2011-03-17 06:45:00')[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://ps5050:3000/events/15
+Completed in 109ms (DB: 62) | 302 Found [http://ps5050/events]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 10.77.224.66 at 2011-03-16 12:15:51) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 15) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 62ms (View: 0, DB: 16) | 200 OK [http://ps5050/events/15]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 10.77.224.66 at 2011-03-16 12:15:56) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (31.2ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 15) [0m
+Redirected to webcal://ps5050:3000/icall/15201103164551.ics
+Completed in 47ms (DB: 31) | 302 Found [http://ps5050/events/15/subscribe]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#edit (for 10.77.224.66 at 2011-03-16 12:16:31) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 15) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 109ms (View: 62, DB: 31) | 200 OK [http://ps5050/events/15/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#update (for 10.77.224.66 at 2011-03-16 12:16:50) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"3Om/Z22689vemSYYLVk3f6x4Lkn89mhBjB/uUQfcqMI=", "id"=>"15", "event"=>{"end_date(3i)"=>"18", "start_date(1i)"=>"2011", "location"=>"Mumbai", "end_date(4i)"=>"06", "start_date(2i)"=>"3", "end_date(5i)"=>"45", "start_date(3i)"=>"16", "attendees"=>"chirag_viradiya@persistent.co.in", "start_date(4i)"=>"03", "start_date(5i)"=>"45", "description"=>"Test Event ", "end_date(1i)"=>"2011", "end_date(2i)"=>"3"}}
+  [4;36;1mEvent Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 15) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Update (0.0ms)[0m   [0mUPDATE `events` SET `updated_at` = '2011-03-16 06:46:51', `start_date` = '2011-03-16 03:45:00', `location` = 'Mumbai', `end_date` = '2011-03-18 06:45:00' WHERE `id` = 15[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://ps5050:3000/events/15
+Completed in 94ms (DB: 47) | 302 Found [http://ps5050/events/15]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 10.77.224.66 at 2011-03-16 12:16:51) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 15) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 62ms (View: 0, DB: 16) | 200 OK [http://ps5050/events/15]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#subscribe (for 10.77.224.66 at 2011-03-16 12:18:40) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 15) [0m
+Redirected to webcal://ps5050:3000/icall/15201103164551.ics
+Completed in 47ms (DB: 16) | 302 Found [http://ps5050/events/15/subscribe]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 10.77.224.66 at 2011-03-16 12:47:59) [GET]
+  [4;35;1mEvent Load (15.6ms)[0m   [0mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Columns (46.9ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Completed in 141ms (View: 62, DB: 62) | 200 OK [http://ps5050/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#show (for 10.77.224.66 at 2011-03-16 12:48:05) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (15.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 10) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 62ms (View: 16, DB: 31) | 200 OK [http://ps5050/events/10]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 10.77.224.66 at 2011-03-16 12:48:12) [GET]
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Columns (31.2ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Completed in 234ms (View: 62, DB: 31) | 200 OK [http://ps5050/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#edit (for 10.77.224.66 at 2011-03-16 12:48:14) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mEvent Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 9) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 203ms (View: 156, DB: 0) | 200 OK [http://ps5050/events/9/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 10.77.224.66 at 2011-03-16 12:48:22) [GET]
+  [4;35;1mEvent Load (0.0ms)[0m   [0mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Completed in 94ms (View: 78, DB: 0) | 200 OK [http://ps5050/events]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#new (for 10.77.224.66 at 2011-03-16 12:48:24) [GET]
+  [4;35;1mEvent Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 94ms (View: 62, DB: 16) | 200 OK [http://ps5050/events/new]
